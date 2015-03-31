@@ -1,0 +1,50 @@
+package myPac1;
+
+import java.util.ArrayList;
+
+public class ArrayListExample {
+	static String[] favouriteCharacters = { "Harry", "Ron", "Hermione",
+			"Snape", "Dumbledore", "Mody" };
+	int i;
+	public ArrayList<String> favouritelist = new ArrayList<String>() {
+
+		// добавление 'favouriteCharacters' в 'favouritelist'
+		private void includeCharacters(String[] favouriteCharacters) {
+			for (i = 0; i < favouriteCharacters.length; i++) {
+
+				// добавление элементов по одному из массива
+				// 'favouriteCharacters'
+				favouritelist.add(favouriteCharacters[i]);
+				printCharacters(i);
+
+			}
+			// добавление эл. посредством указания позиций
+			favouritelist.add(1, "george");
+			favouritelist.add(4, "Peter");
+		}
+
+		// метод выводит элемент "favouritelist" по указанной позиции
+		private void printCharacters(int i) {
+			System.out.println("Character " + (i + 1) + ":"
+					+ favouritelist.get(i));
+		}
+
+
+		// выводим все элементы "favouritelist"
+		private void printCharacters() {
+			System.out.println("\n");
+			for(int i=0; i<favouritelist.size(); i++) {
+				System.out.println("Character"+(i+1)+ favouritelist.get(i));
+			}
+		}
+
+		// метод возвращает размер коллекции ‘favouritelist’
+		private int sizeOfCharactersList() {
+			System.out.println("\n");
+			System.out.println("Total No of Characters in Array:" + favouriteCharacters.length);
+			System.out.println("Total No of Characters in List:" + favouritelist.size());
+		return favouritelist.size();
+		}
+
+	};
+}
